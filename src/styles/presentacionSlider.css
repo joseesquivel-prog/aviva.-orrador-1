@@ -1,0 +1,47 @@
+.slider-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100vh;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  margin-top: -22px;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  user-select: none;
+  z-index: 2;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+.indicadorSlide {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.indicadorSlide.active {
+  background-color: #717171;
+}
