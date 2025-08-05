@@ -1,22 +1,32 @@
 // src/components/Diapositivas/Diapo2.tsx
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 type Props = {
   onFinish: () => void;
 };
 
 export default function Diapo2({ onFinish }: Props) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   useEffect(() => {
-    const video = document.getElementById('video-diapo2') as HTMLVideoElement;
+    const video = videoRef.current;
     if (video) {
       video.play();
-      video.onended = onFinish;
+      video.addEventListener('ended', onFinish);
+      return () => {
+        video.removeEventListener('ended', onFinish);
+      };
     }
   }, [onFinish]);
 
   return (
     <div className="slide">
-      <video id="video-diapo2" src="/video/video.mp4" controls style={{ width: '100%' }} />
+      <video
+        ref={videoRef}
+        src="/video/video.mp4"
+        controls
+        style={{ width: '100%' }}
+      />
     </div>
   );
 }
