@@ -1,6 +1,6 @@
 // src/components/PresentacionSlider.tsx
 import { useEffect, useState } from 'react';
-import '../styles/PresentacionSlider.css';
+import '../styles/presentacionSlider.css';
 
 const images = [
   '/img/presentaciones/3_frontal.jpg',
