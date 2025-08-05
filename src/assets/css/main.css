@@ -164,7 +164,7 @@ logo.arquitectura {
 /* textos */
 h1 {
   font-size: 24px;
-  font-weight: 1px;
+  font-weight: 400;
   margin: 30px 0;
   color: rgba(32, 20, 61, 0.651);
 }
