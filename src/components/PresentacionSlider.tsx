@@ -1,5 +1,5 @@
 // src/components/PresentacionSlider.tsx
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import '../styles/PresentacionSlider.css';
 
 const images = [
@@ -11,9 +11,9 @@ const images = [
 const PresentacionSlider = () => {
   const [current, setCurrent] = useState(0);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrent((prev) => (prev + 1) % images.length);
-  };
+  }, []);
 
   const prevSlide = () => {
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
@@ -25,11 +25,9 @@ const PresentacionSlider = () => {
 
   // Auto-slide
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 5000);
+    const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextSlide]);
 
   return (
     <div className="slider-container">
