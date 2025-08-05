@@ -43,12 +43,22 @@ const PresentacionSlider = () => {
         </div>
       ))}
 
-      <a className="prev" onClick={prevSlide}>
+      <button
+        className="prev"
+        onClick={prevSlide}
+        aria-label="Anterior"
+        type="button"
+      >
         &#10094;
-      </a>
-      <a className="next" onClick={nextSlide}>
+      </button>
+      <button
+        className="next"
+        onClick={nextSlide}
+        aria-label="Siguiente"
+        type="button"
+      >
         &#10095;
-      </a>
+      </button>
 
       <div style={{ textAlign: 'center', marginTop: '1rem' }}>
         {images.map((_, index) => (
