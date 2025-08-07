@@ -1,24 +1,35 @@
 // src/components/Diapositivas/Diapo7.tsx
-import { useEffect } from 'react';
 
 type Props = {
   onFinish: () => void;
 };
 
 export default function Diapo7({ onFinish }: Props) {
-  useEffect(() => {
-    if (document.fullscreenElement) {
-      document.exitFullscreen().then(() => {
-        onFinish();
-      });
-    } else {
+  const handleExit = () => {
+    const exit = document.fullscreenElement
+      ? document.exitFullscreen()
+      : Promise.resolve();
+
+    exit.finally(() => {
       onFinish();
-    }
-  }, [onFinish]);
+      window.location.href = '/contacto.html';
+    });
+  };
 
   return (
-    <div className="fondo">
-      <h1 className="textoCentrado">Gracias por ver la presentación</h1>
+    <div
+      className="slide"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        gap: '1rem',
+      }}
+    >
+      <h1>Gracias por ver la presentación</h1>
+      <button onClick={handleExit}>Salir</button>
     </div>
   );
 }

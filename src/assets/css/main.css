@@ -1,17 +1,17 @@
 /* fuentes */
 @font-face {
   font-family: "holydayhardcore";
-  src: url("/assets/fonts/HolydayHardcore.TTF");
+  src: url("../fonts/HolydayHardcore.TTF");
 }
 
 @font-face {
   font-family: "manrope";
-  src: url("/assets/fonts/Manrope-VariableFont_wght.ttf");
+  src: url("../fonts/Manrope-VariableFont_wght.ttf");
 }
 
 @font-face {
   font-family: "arq_logo";
-  src: url("/assets/fonts/Gruppo-Regular.ttf");
+  src: url("../fonts/Gruppo-Regular.ttf");
 }
 
 /* formato general */
@@ -164,7 +164,7 @@ logo.arquitectura {
 /* textos */
 h1 {
   font-size: 24px;
-  font-weight: 1px;
+  font-weight: 400;
   margin: 30px 0;
   color: rgba(32, 20, 61, 0.651);
 }

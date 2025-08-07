@@ -4,13 +4,13 @@
   margin: auto;
 }
 
-.slide {
+.slider-slide {
   display: none;
   width: 100%;
   height: 100vh;
 }
 
-.slide img {
+.slider-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
